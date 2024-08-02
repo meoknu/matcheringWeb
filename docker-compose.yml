@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8360:8360"  # Adjust the port mapping as necessary for your application
+    volumes:
+      - .:/app
+      # - ./data:/app/data
+      - app-data:/app/data
+    # restart: always
+    stdin_open: true  # Equivalent to -i in docker run
+    tty: true         # Equivalent to -t in docker run
+    # command: bash
+volumes:
+  app-data:

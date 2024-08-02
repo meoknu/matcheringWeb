@@ -25,5 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 RUN chmod +x ./init.sh && mkdir data
+RUN chown www-data .
 
 CMD ["./init.sh"]
+# CMD ["bash"]

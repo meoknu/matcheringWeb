@@ -15,14 +15,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-
 from django.urls import path
 from django.views.generic import TemplateView, RedirectView
+from . import views
 
 from matchering_web.settings import STATIC_URL
 
-app_name = "mgw_front"
+app_name = 'mgw_front'
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="index.html")),
+    path("", TemplateView.as_view(template_name="index.html"), name='index'),
     path("favicon.ico", RedirectView.as_view(url=f"{STATIC_URL}favicon.ico")),
+    path("about/", views.about, name='about'), 
+    path("faq/", views.faq, name='faq')
 ]
+
