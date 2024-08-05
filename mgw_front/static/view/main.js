@@ -168,7 +168,7 @@ $("#upload-reference").hover(
     genHandler(
         "#upload-tip",
         uploadTipText,
-        "Some <span class=\"accent\">Wet</span> Reference Track"
+        "The <span class=\"accent\">Track</span> you want to sound like"
     )
 );
 
